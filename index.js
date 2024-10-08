@@ -41,7 +41,7 @@ app.post("/api/shorturl", (req, res) => {
                 short_url: urlShort
             }
             const result = await urls.insertOne(urlDocument);
-            const fullUrl = `${req.protocol}://${req.headers.host}/api/shorturl/${urlShort}`;
+            const fullUrl = `${req.headers.host}/api/${urlShort}`;
 
             res.render('index', {
                 originalUrl: url,
@@ -53,7 +53,7 @@ app.post("/api/shorturl", (req, res) => {
 });
 
 
-app.get("/api/shorturl/:short_url", async (req,res) => {
+app.get("/api/:short_url", async (req,res) => {
     const shorturl = req.params.short_url;
     const urlDocument = await urls.findOne({short_url: +shorturl});
 
@@ -63,13 +63,6 @@ app.get("/api/shorturl/:short_url", async (req,res) => {
         res.status(404).send("URL encurtada não encontrada");
     }
 });
-
-
-
-
-
-
-
 
 
 
