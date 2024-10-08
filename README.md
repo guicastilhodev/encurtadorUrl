@@ -2,6 +2,8 @@
 
 Um encurtador de URL simples desenvolvido em Node.js que permite transformar URLs longas em URLs curtas, facilitando o compartilhamento.
 
+![imagemEncurtador](https://github.com/user-attachments/assets/f3be6c23-97e0-492e-a912-560bffade149)
+
 ## Funcionalidades
 
 - **Encurtar URLs**: Converte uma URL longa em um link curto.
@@ -26,9 +28,28 @@ Siga os passos abaixo para configurar o projeto em sua máquina local.
 ### Pré-requisitos
 
 - [Node.js](https://nodejs.org/) instalado.
-- [MongoDB](https://www.mongodb.com/) instalado e em execução.
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) configurado.
 
-### Passos
+### Configuração do MongoDB Atlas
+
+1. Crie uma conta no MongoDB Atlas e configure um cluster.
+2. Crie um banco de dados e um usuário com as permissões necessárias.
+3. Obtenha a string de conexão para o seu cluster. A string será semelhante a:
+    ```env
+    mongodb+srv://<usuario>:<senha>@<cluster>.mongodb.net/encurtador?retryWrites=true&w=majority
+    ```
+4. **Substitua:**
+   - `<usuario>`: seu nome de usuário do MongoDB Atlas.
+   - `<senha>`: a senha do seu usuário.
+   - `<cluster>`: o nome do seu cluster (por exemplo, `cluster0`).
+   
+5. Configure a variável de ambiente no arquivo `.env` na raiz do projeto:
+    ```env
+    MONGODB_URI=mongodb+srv://<usuario>:<senha>@<cluster>.mongodb.net/encurtador?retryWrites=true&w=majority
+    PORT=3000
+    ```
+
+### Passos para Executar
 
 1. Clone o repositório:
     ```bash
@@ -41,20 +62,16 @@ Siga os passos abaixo para configurar o projeto em sua máquina local.
     npm install
     ```
 
-3. Configure as variáveis de ambiente. Crie um arquivo `.env` na raiz do projeto e adicione suas configurações, por exemplo:
-    ```env
-    MONGODB_URI=mongodb://localhost:27017/encurtador
-    PORT=3000
-    ```
-
-4. Inicie o servidor:
+3. Inicie o servidor:
     ```bash
     npm start
     ```
 
-5. Acesse a aplicação em seu navegador: [http://localhost:3000](http://localhost:3000)
+4. Acesse a aplicação em seu navegador: [http://localhost:3000](http://localhost:3000)
 
 ## Uso
 
 - Para encurtar uma URL, acesse a página inicial e insira a URL desejada.
 - O sistema gerará uma URL curta que você pode usar para redirecionar os usuários.
+
+
