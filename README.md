@@ -2,8 +2,6 @@
 
 Um encurtador de URL simples desenvolvido em Node.js que permite transformar URLs longas em URLs curtas, facilitando o compartilhamento.
 
-![imagemEncurtador](https://github.com/user-attachments/assets/f3be6c23-97e0-492e-a912-560bffade149)
-
 ## Funcionalidades
 
 - **Encurtar URLs**: Converte uma URL longa em um link curto.
@@ -16,10 +14,6 @@ Um encurtador de URL simples desenvolvido em Node.js que permite transformar URL
 - **Express**: Framework web para facilitar o desenvolvimento da API.
 - **MongoDB**: Banco de dados NoSQL para armazenar as URLs encurtadas.
 - **Mongoose**: ODM (Object Data Modeling) para MongoDB e Node.js.
-
-## Deploy
-
-O projeto está disponível online! Você pode testá-lo através do seguinte link: [https://encurtadorurl.onrender.com/](https://encurtadorurl.onrender.com/)
 
 ## Como Executar Localmente
 
